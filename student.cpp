@@ -5,13 +5,14 @@
 #include <vector>
 
 using namespace std;
-
+//the structure
 struct student{
   char fname[20];
   char lname[20];
   int id;
   float gpa;
 };
+//three methods
 void delt(vector<student*> &data);
 void add(vector<student*> &data);
 void print(vector<student*> data);
@@ -21,6 +22,7 @@ int main(){
   //vector
   vector<student*> list; 
   char input[10];
+  //taking the input the user gives
   while(kg == true){
     cout << "Input a command,(add,print,delete,quit)" << endl;
     cin >> input;
@@ -39,13 +41,14 @@ int main(){
     }
   }
 }
+//adds the student's name, id , and gpa
 void add(vector<student*> &data){
   char fname[20];
   char lname[20];
   int id;
   float gpa;
   student *name = new student();
-  cout << "input stuff!" << endl;
+  cout << "Input information: first name, last name , id, gpa" << endl;
   cin >> name->fname;
   cin >> name->lname;
   cin >> id;
@@ -56,14 +59,20 @@ void add(vector<student*> &data){
   name->gpa = gpa;
   data.push_back(name);
 }
+//prints all of the data in the student vector
 void print(vector<student*> data){
   int size = data.size();
+  cout.precision(3);
   for(int i = 0;i < size;i++){
     cout << data[i]->fname << "," << data[i]->lname << "," << data[i]->id << "," << data[i]->gpa << endl;
+  }
+  if(size == 0){
+    cout << "No items!" << endl;
   }
   //cout << data[0]->fname << endl;
   
 }
+//deleting the student name based on the id number given
 void delt(vector<student*> &data){
   cout << "insert id number" << endl;
   int size = data.size();
