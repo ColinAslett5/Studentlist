@@ -36,7 +36,7 @@ int main(){
       delt(list);
     }
     if(strcmp(input,"quit") == 0){
-      cout << "bye" << endl;
+      cout << "Goodbye" << endl;
       kg = false;
     }
   }
@@ -53,8 +53,6 @@ void add(vector<student*> &data){
   cin >> name->lname;
   cin >> id;
   cin >> gpa;
-  //name->fname = fname;
-  //name->lname = lname;
   name->id = id;
   name->gpa = gpa;
   data.push_back(name);
@@ -69,10 +67,9 @@ void print(vector<student*> data){
   if(size == 0){
     cout << "No items!" << endl;
   }
-  //cout << data[0]->fname << endl;
   
 }
-//deleting the student name based on the id number given
+//deleting the students name,id,gpa based on the id number given
 void delt(vector<student*> &data){
   cout << "insert id number" << endl;
   int size = data.size();
