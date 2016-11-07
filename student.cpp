@@ -1,3 +1,4 @@
+// Colin Aslett, C++, Period 07
 #include <iostream>
 #include <string.h>
 #include <ctype.h>
@@ -17,6 +18,9 @@ void delt(vector<student*> &data);
 void add(vector<student*> &data);
 void print(vector<student*> data);
 int main(){
+  cout.setf(ios::fixed,ios::floatfield);
+  cout.setf(ios::showpoint);
+  cout.precision(2);
   //a while loop thingy variable
   bool kg = true;
   //vector
@@ -60,7 +64,7 @@ void add(vector<student*> &data){
 //prints all of the data in the student vector
 void print(vector<student*> data){
   int size = data.size();
-  cout.precision(3);
+  //cout.precision(3);
   for(int i = 0;i < size;i++){
     cout << data[i]->fname << "," << data[i]->lname << "," << data[i]->id << "," << data[i]->gpa << endl;
   }
